@@ -1,0 +1,7 @@
+{
+  "name": "PetrolHub Manager",
+  "description": "A comprehensive gas station management system inspired by StationPlus and LS Retail, featuring role-based access control, fuel tank monitoring, and lubricant inventory management.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
