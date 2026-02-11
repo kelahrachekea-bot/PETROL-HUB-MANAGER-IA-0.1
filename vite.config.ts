@@ -4,9 +4,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   define: {
-    // Injection des variables d'environnement pour Gemini
+    // On injecte la clé API de l'environnement de build
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
-    'process.env': '({})'
+    // On définit process.env comme un objet vide pour éviter les erreurs dans les libs tierces
+    'process.env': {}
   },
   server: {
     port: 3000,
