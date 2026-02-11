@@ -4,10 +4,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   define: {
-    // On injecte la clé API de l'environnement de build
-    'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
-    // On définit process.env comme un objet vide pour éviter les erreurs dans les libs tierces
-    'process.env': {}
+    // On définit uniquement la clé nécessaire. Vite remplacera les occurrences de 'process.env.API_KEY'
+    // par la valeur de la variable d'environnement lors de la compilation.
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || '')
   },
   server: {
     port: 3000,
